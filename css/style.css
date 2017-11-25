@@ -29,17 +29,25 @@ body.loading {
   background: #000;
 }
 
-a, button, footer, table, .additional-info {
-  font-family: 'Fira Sans Condensed', sans-serif;
+a, button, footer, table, .additional-info, .menu {
   color: #cccccc;
+  font-family: 'Fira Sans Condensed', sans-serif;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: black;
+  font-size: 1.3em;
+  cursor: pointer;
 }
 
 a:hover, button:hover {
   color: #fff;
 }
 
-.menu {
-  z-index: 2;
+h3 {
+  text-align: center;
 }
 
 td {
@@ -81,7 +89,7 @@ footer a {
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.2);
   width: 100%;
   height: 97.5vh;
   z-index: 1;
@@ -98,12 +106,7 @@ footer a {
 .menu-buttons button {
   position: fixed;
   width: 4em;
-  border: none;
-  outline: none;
   padding: 20px;
-  background: black;
-  font-size: 1.3em;
-  cursor: pointer;
   transition: color 0.2s, transform 1s 0.1s, filter 0.8s;
 }
 
@@ -153,17 +156,42 @@ footer a {
   bottom: 25vh;
 }
 
+.btn-close {
+  position: absolute;
+  right: 0;
+  transition: transform 0.5s, color 0.2s;
+}
+
+.btn-close:hover {
+  transform: rotate(15deg);
+}
+
 .menu {
   position: fixed;
-  transition: transform;
+  z-index: 2;
   background: #000;
-  box-shadow: 0 0 3vw #000;
-  transition: transform 0.3s, filter 0.2s;
+  box-shadow: -3vw -3vh 20px #000, 3vw 3vh 20px #000, -3vw 3vh 20px #000, 3vw -3vh 20px #000;
+  transition: transform 0.3s cubic-bezier(0.6, 0.5, 0, 1.05), filter 0.3s;
+}
+
+.menu.hidden {
+  filter: blur(50px);
 }
 
 .menu-react.hidden {
-  transform: translate(-100vw);
-  filter: blur(50px);
+  transform: translate(-100vw, -30vh);
+}
+
+.menu-full.hidden {
+  transform: translate(-100vw, 30vh);
+}
+
+.menu-front.hidden {
+  transform: translate(100vw, -30vh);
+}
+
+.menu-back.hidden {
+  transform: translate(100vw, 30vh);
 }
 
 .main-center {
@@ -175,31 +203,30 @@ footer a {
   display: none;
 }
 
-.main-center a {
+.contact {
+  flex-flow: row wrap;
+}
+
+.contact a {
   text-decoration: none;
   font-size: 1.2em;
   font-variant: small-caps;
   background: none;
   box-shadow: 0 0 2em black;
   border-radius: 0.2em;
-  padding: 0.4em 0.6em;
+  padding: 0.5em 0.3em;
   transition: color 0.2s, background 0.4s, box-shadow 0.8s;
 }
 
-.main-center a:hover {
+.contact a:hover {
   background: #000;
   box-shadow: 0 -0.3em 2em #000, 0 0 3em #440000;
   cursor: pointer;
 }
 
-.main-center a:active {
+.contact a:active {
   background: #060606;
   box-shadow: 0 -0.5em 4em #000, 0 0 3em #6d0000;
-}
-
-.contact {
-  flex-flow: row wrap;
-  margin-bottom: -1.2em;
 }
 
 .contact i {
@@ -291,12 +318,14 @@ footer a {
   .hide-on-small {
     display: none;
   }
+  .contact a {
+    padding-bottom: 0;
+  }
   .contact > a:nth-child(1) {
     order: 2;
   }
   .main-center {
     max-width: 100vw;
-    line-height: 2em;
   }
   .main-center br {
     display: block;

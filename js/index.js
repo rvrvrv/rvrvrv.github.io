@@ -85,25 +85,29 @@ function openMenu(menu) {
   overlay.style.display = 'block';
   // Remove 'hidden' class from selected menu
   document.getElementsByClassName(`menu-${menu}`)[0].classList.remove('hidden');
-
-
 }
 
-// Trigger animations after page loads
+// Close project menus
+function closeMenu() {
+  document.querySelector('.menu:not(.hidden)').classList.add('hidden');
+  overlay.style.opacity = 0;
+  overlay.style.display = 'none';
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   // Begin tech carousel
   techSwap();
   // Make elements appear smoothly
   Array.from(document.getElementsByClassName('loading')).forEach(e => e.classList.remove('loading'));
-  // Create click-handlers for menu buttons
-  Array.from(document.getElementsByTagName('button')).forEach((e) => {
+  // Open menu
+  Array.from(document.getElementsByClassName('btn-menu')).forEach((e) => {
     e.addEventListener('click', () => openMenu(e.id.slice(3).toLowerCase()));
   });
-  // When overlay is clicked, close menu and hide overlay
-  overlay.addEventListener('click', () => {
-    document.querySelector('.menu:not(.hidden)').classList.add('hidden');
-    overlay.style.opacity = 0;
-    overlay.style.display = 'none';
+  // Close menu (via close button)
+  Array.from(document.getElementsByClassName('btn-close')).forEach((e) => {
+    e.addEventListener('click', closeMenu);
   });
+  // Close menu (via overlay)
+  overlay.addEventListener('click', closeMenu);
 });
 

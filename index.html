@@ -9,43 +9,182 @@
 </head>
 
 <body class="loading">
-    <div class="overlay"></div>
+
+  <div class="overlay"></div>
 
   <div class="menu-buttons">
-    <button class="btn-top btn-left loading" id="btnReact">React &amp; D3</button>
-    <button class="btn-top btn-right loading" id="btnFront">Front-End</button>
-    <button class="btn-btm btn-left loading" id="btnFull">Full Stack</button>
-    <button class="btn-btm btn-right loading" id="btnBack">Back-End</button>
+    <button class="btn-menu btn-top btn-left loading" id="btnReact">React &amp; D3</button>
+    <button class="btn-menu btn-top btn-right loading" id="btnFront">Front-End</button>
+    <button class="btn-menu btn-btm btn-left loading" id="btnFull">Full Stack</button>
+    <button class="btn-menu btn-btm btn-right loading" id="btnBack">Back-End</button>
   </div>
 
-  <div class="menu menu-react hidden">
+  <div class="menu menu-react">
+    <button class="btn-close"><i class="fa fa-times-circle"></i></button>
+    <h3>React and D3 Projects</h3>
     <table id="table-react">
       <tr>
-        <td>D3: Bar Graph</td>
-        <td><a href="https://codepen.io/rvrvrv" target="_blank"><i class="fa fa-codepen"></i></a></td>
+        <td>Recipe Box</td>
+        <td><a href="https://codepen.io/rvrvrv/pen/NvzyXE" target="_blank"><i class="fa fa-codepen"></i></a></td>
+        <td><a href="https://github.com/rvrvrv" target="_blank"><i class="fa fa-code-fork"></i></a></td>
+      </tr>
+      <tr>
+        <td>Conway's Game of Life</td>
+        <td><a href="https://codepen.io/rvrvrv/pen/oGgrjK" target="_blank"><i class="fa fa-codepen"></i></a></td>
+        <td><a href="https://github.com/rvrvrv" target="_blank"><i class="fa fa-code-fork"></i></a></td>
+      </tr>
+      <tr>
+        <td>Camper Leaderboard</td>
+        <td><a href="https://codepen.io/rvrvrv/pen/WEzNNG" target="_blank"><i class="fa fa-codepen"></i></a></td>
+        <td><a href="https://github.com/rvrvrv" target="_blank"><i class="fa fa-code-fork"></i></a></td>
+      </tr>
+      <tr>
+        <td>Markdown Previewer</td>
+        <td><a href="https://codepen.io/rvrvrv/pen/RZZyGv" target="_blank"><i class="fa fa-codepen"></i></a></td>
+        <td><a href="https://github.com/rvrvrv" target="_blank"><i class="fa fa-code-fork"></i></a></td>
+      </tr>
+      <tr>
+        <td>Roguelike Dungeon Crawler</td>
+        <td><a href="https://codepen.io/rvrvrv/pen/VrYQXK" target="_blank"><i class="fa fa-codepen"></i></a></td>
+        <td><a href="https://github.com/rvrvrv" target="_blank"><i class="fa fa-code-fork"></i></a></td>
+      </tr>
+      <tr>
+        <td>D3: Global Data Map</td>
+        <td><a href="https://codepen.io/rvrvrv/pen/oGaKwK" target="_blank"><i class="fa fa-codepen"></i></a></td>
         <td><a href="https://github.com/rvrvrv" target="_blank"><i class="fa fa-code-fork"></i></a></td>
       </tr>
       <tr>
         <td>D3: Scatterplot Graph</td>
-        <td><a href="https://codepen.io/rvrvrv" target="_blank"><i class="fa fa-codepen"></i></a></td>
+        <td><a href="https://codepen.io/rvrvrv/pen/gGRerO" target="_blank"><i class="fa fa-codepen"></i></a></td>
         <td><a href="https://github.com/rvrvrv" target="_blank"><i class="fa fa-code-fork"></i></a></td>
       </tr>
       <tr>
-          <td>D3: Heat Map</td>
-          <td><a href="https://codepen.io/rvrvrv" target="_blank"><i class="fa fa-codepen"></i></a></td>
-          <td><a href="https://github.com/rvrvrv" target="_blank"><i class="fa fa-code-fork"></i></a></td>
+        <td>D3: Bar Graph</td>
+        <td><a href="https://codepen.io/rvrvrv/pen/aLJZRO" target="_blank"><i class="fa fa-codepen"></i></a></td>
+        <td><a href="https://github.com/rvrvrv" target="_blank"><i class="fa fa-code-fork"></i></a></td>
+      </tr>
+      <tr>
+        <td>D3: Heat Map</td>
+        <td><a href="https://codepen.io/rvrvrv/pen/MEExzm" target="_blank"><i class="fa fa-codepen"></i></a></td>
+        <td><a href="https://github.com/rvrvrv" target="_blank"><i class="fa fa-code-fork"></i></a></td>
       </tr>
       <tr>
         <td>D3: Force-Directed Graph</td>
-        <td><a href="https://codepen.io/rvrvrv" target="_blank"><i class="fa fa-codepen"></i></a></td>
-        <td><a href="https://github.com/rvrvrv" target="_blank"><i class="fa fa-code-fork"></i></a></td>
-      </tr>
-      <tr>
-        <td>D3: Globe Map</td>
-        <td><a href="https://codepen.io/rvrvrv" target="_blank"><i class="fa fa-codepen"></i></a></td>
+        <td><a href="https://codepen.io/rvrvrv/pen/WZJKwX" target="_blank"><i class="fa fa-codepen"></i></a></td>
         <td><a href="https://github.com/rvrvrv" target="_blank"><i class="fa fa-code-fork"></i></a></td>
       </tr>
     </table>
+  </div>
+
+  <div class="menu menu-full hidden">
+    <button class="btn-close"><i class="fa fa-times-circle"></i></button>
+    <h3>Full-Stack Projects</h3>
+    <table id="table-full">
+      <tr>
+        <td>Chart the Stock Market</td>
+        <td><a href="https://rv-stocks.herokuapp.com/" target="_blank"><i class="fa fa-share"></i></a></td>
+        <td><a href="https://github.com/rvrvrv" target="_blank"><i class="fa fa-code-fork"></i></a></td>
+      </tr>
+      <tr>
+        <td>Pinterest Clone</td>
+        <td><a href="https://rv-interested.herokuapp.com/" target="_blank"><i class="fa fa-share"></i></a></td>
+        <td><a href="https://github.com/rvrvrv" target="_blank"><i class="fa fa-code-fork"></i></a></td>
+      </tr>
+      <tr>
+        <td>Book Trading Club</td>
+        <td><a href="https://rv-bookclub.herokuapp.com/" target="_blank"><i class="fa fa-share"></i></a></td>
+        <td><a href="https://github.com/rvrvrv" target="_blank"><i class="fa fa-code-fork"></i></a></td>
+      </tr>
+      <tr>
+        <td>Nightlife Coordination App</td>
+        <td><a href="https://rv-nightlife.herokuapp.com/" target="_blank"><i class="fa fa-share"></i></a></td>
+        <td><a href="https://github.com/rvrvrv" target="_blank"><i class="fa fa-code-fork"></i></a></td>
+      </tr>
+      <tr>
+        <td>Voting App</td>
+        <td><a href="https://rv-voting.herokuapp.com/" target="_blank"><i class="fa fa-share"></i></a></td>
+        <td><a href="https://github.com/rvrvrv" target="_blank"><i class="fa fa-code-fork"></i></a></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="menu menu-front hidden">
+    <button class="btn-close"><i class="fa fa-times-circle"></i></button>
+    <h3>Front-End Projects</h3>
+    <table id="table-front">
+      <tr>
+        <td>AI Tic-Tac-Toe</td>
+        <td><a href="https://codepen.io/rvrvrv/pen/ENRbee" target="_blank"><i class="fa fa-codepen"></i></a></td>
+        <td><a href="https://github.com/rvrvrv" target="_blank"><i class="fa fa-code-fork"></i></a></td>
+      </tr>
+      <tr>
+        <td>Pomodoro Clock</td>
+        <td><a href="https://codepen.io/rvrvrv/pen/MJOYQz" target="_blank"><i class="fa fa-codepen"></i></a></td>
+        <td><a href="https://github.com/rvrvrv" target="_blank"><i class="fa fa-code-fork"></i></a></td>
+      </tr>
+      <tr>
+        <td>Random Quote Machine</td>
+        <td><a href="http://codepen.io/rvrvrv/pen/gLYwKZ" target="_blank"><i class="fa fa-codepen"></i></a></td>
+        <td><a href="https://github.com/rvrvrv" target="_blank"><i class="fa fa-code-fork"></i></a></td>
+      </tr>
+      <tr>
+        <td>Wikipedia Viewer</td>
+        <td><a href="https://codepen.io/rvrvrv/pen/WovqoQ" target="_blank"><i class="fa fa-codepen"></i></a></td>
+        <td><a href="https://github.com/rvrvrv" target="_blank"><i class="fa fa-code-fork"></i></a></td>
+      </tr>
+      <tr>
+        <td>Twitch.TV Live Streamers List</td>
+        <td><a href="https://codepen.io/rvrvrv/pen/QGypwG" target="_blank"><i class="fa fa-codepen"></i></a></td>
+        <td><a href="https://github.com/rvrvrv" target="_blank"><i class="fa fa-code-fork"></i></a></td>
+      </tr>
+      <tr>
+        <td>Simon Game</td>
+        <td><a href="https://codepen.io/rvrvrv/pen/aBPJMY" target="_blank"><i class="fa fa-codepen"></i></a></td>
+        <td><a href="https://github.com/rvrvrv" target="_blank"><i class="fa fa-code-fork"></i></a></td>
+      </tr>
+      <tr>
+        <td>Local Weather Getter</td>
+        <td><a href="http://codepen.io/rvrvrv/pen/rWNybL" target="_blank"><i class="fa fa-codepen"></i></a></td>
+        <td><a href="https://github.com/rvrvrv" target="_blank"><i class="fa fa-code-fork"></i></a></td>
+      </tr>
+      <tr>
+        <td>Calculator</td>
+        <td><a href="http://codepen.io/rvrvrv/pen/eBeLPG" target="_blank"><i class="fa fa-codepen"></i></a></td>
+        <td><a href="https://github.com/rvrvrv" target="_blank"><i class="fa fa-code-fork"></i></a></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="menu menu-back hidden">
+      <button class="btn-close"><i class="fa fa-times-circle"></i></button>
+      <h3>Back-End Projects</h3>
+      <table id="table-front">
+        <tr>
+          <td>URL Shortener Microservice</td>
+          <td><a href="https://url-shortener-rv.herokuapp.com/" target="_blank"><i class="fa fa-share"></i></a></td>
+          <td><a href="https://github.com/rvrvrv" target="_blank"><i class="fa fa-code-fork"></i></a></td>
+        </tr>
+        <tr>
+          <td>Timestamp Microservice</td>
+          <td><a href="https://timestamp-api-rv.herokuapp.com/" target="_blank"><i class="fa fa-share"></i></a></td>
+          <td><a href="https://github.com/rvrvrv" target="_blank"><i class="fa fa-code-fork"></i></a></td>
+        </tr>
+        <tr>
+          <td>Image Search Abstraction Layer</td>
+          <td><a href="http://img-search-rv.herokuapp.com/" target="_blank"><i class="fa fa-share"></i></a></td>
+          <td><a href="https://github.com/rvrvrv" target="_blank"><i class="fa fa-code-fork"></i></a></td>
+        </tr>
+        <tr>
+          <td>File Metadata Microservice</td>
+          <td><a href="https://file-size-rv.herokuapp.com/" target="_blank"><i class="fa fa-share"></i></a></td>
+          <td><a href="https://github.com/rvrvrv" target="_blank"><i class="fa fa-code-fork"></i></a></td>
+        </tr>
+        <tr>
+          <td>Request Header Parser Microservice</td>
+          <td><a href="https://req-header-parser-rv.herokuapp.com/" target="_blank"><i class="fa fa-share"></i></a></td>
+          <td><a href="https://github.com/rvrvrv" target="_blank"><i class="fa fa-code-fork"></i></a></td>
+        </tr>
+      </table>
   </div>
 
   <div class="main-center">
@@ -70,7 +209,7 @@
   </div>
 
   <div class="additional-info">
-    Text 12345.
+    Many years of professional experience. One year
   </div>
 
   <footer class="loading">
