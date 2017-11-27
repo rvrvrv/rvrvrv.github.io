@@ -12,7 +12,7 @@ body, .contact, .technolgies {
 }
 
 body, footer {
-  transition: background 2.5s;
+  transition: background 3s;
 }
 
 body {
@@ -70,6 +70,7 @@ tr:nth-child(even) {
 footer {
   position: fixed;
   background: #540000;
+  z-index: 3;
   bottom: 0;
   height: 1.2em;
   width: 100%;
@@ -89,9 +90,9 @@ footer a {
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.4);
   width: 100%;
-  height: 97.5vh;
+  height: 100%;
   z-index: 1;
   opacity: 0;
   display: none;
@@ -170,8 +171,13 @@ footer a {
   position: fixed;
   z-index: 2;
   background: #000;
-  box-shadow: -3vw -3vh 20px #000, 3vw 3vh 20px #000, -3vw 3vh 20px #000, 3vw -3vh 20px #000;
+  padding: 0.5em;
+  box-shadow: 0 0 20px #3a0000, -3vw -3vh 20px #000, 3vw 3vh 20px #000, -3vw 3vh 20px #000, 3vw -3vh 20px #000;
   transition: transform 0.3s cubic-bezier(0.6, 0.5, 0, 1.05), filter 0.3s;
+}
+
+.menu h3 {
+  color: #fff;
 }
 
 .menu.hidden {
@@ -179,19 +185,19 @@ footer a {
 }
 
 .menu-react.hidden {
-  transform: translate(-100vw, -30vh);
+  transform: translate(-100vw, -50vh);
 }
 
 .menu-full.hidden {
-  transform: translate(-100vw, 30vh);
+  transform: translate(-100vw, 50vh);
 }
 
 .menu-front.hidden {
-  transform: translate(100vw, -30vh);
+  transform: translate(100vw, -50vh);
 }
 
 .menu-back.hidden {
-  transform: translate(100vw, 30vh);
+  transform: translate(100vw, 50vh);
 }
 
 .main-center {
@@ -242,7 +248,7 @@ footer a {
 }
 
 .technologies {
-  height: 3em;
+  height: 6em;
 }
 
 .technologies img {
@@ -261,8 +267,7 @@ footer a {
 }
 
 .additional-info {
-  padding-top: 2em;
-  min-width: 60vw;
+  text-align: center;
 }
 
 .hide-on-small i {
@@ -314,7 +319,10 @@ footer a {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
+  body {
+    font-size: 18px;
+  }
   .hide-on-small {
     display: none;
   }
@@ -324,23 +332,23 @@ footer a {
   .contact > a:nth-child(1) {
     order: 2;
   }
-  .main-center {
-    max-width: 100vw;
-  }
   .main-center br {
     display: block;
   }
-  .text-dark {
-    font-size: 0.8em;
-  }
 }
 
-@media (max-height: 800px), (max-width: 450px) {
+@media (max-height: 600px), (max-width: 600px) {
   .btn-top {
     top: 0;
   }
   .btn-btm {
     bottom: 1em;
+  }
+}
+
+@media (max-width: 550px) and (max-height: 550px) {
+  .hide-on-tiny {
+    display: none;
   }
 }
  
