@@ -82,7 +82,7 @@ function techSwap() {
 function openMenu(menu) {
   // Display overlay
   overlay.style.opacity = 1;
-  overlay.style.display = 'block';
+  overlay.style.top = 0;
   // Remove 'hidden' class from selected menu
   document.getElementsByClassName(`menu-${menu}`)[0].classList.remove('hidden');
 }
@@ -91,7 +91,7 @@ function openMenu(menu) {
 function closeMenu() {
   document.querySelector('.menu:not(.hidden)').classList.add('hidden');
   overlay.style.opacity = 0;
-  overlay.style.display = 'none';
+  overlay.style.top = '-100%';
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -99,6 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
   techSwap();
   // Make elements appear smoothly
   Array.from(document.getElementsByClassName('loading')).forEach(e => e.classList.remove('loading'));
+  document.body.classList.add('loaded');
   // Open menu
   Array.from(document.getElementsByClassName('btn-menu')).forEach((e) => {
     e.addEventListener('click', () => openMenu(e.id.slice(3).toLowerCase()));
