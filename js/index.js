@@ -98,8 +98,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Begin tech carousel
   techSwap();
   // Make elements appear smoothly
-  Array.from(document.getElementsByClassName('loading')).forEach(e => e.classList.remove('loading'));
-  document.body.classList.add('loaded');
+  Array.from(document.getElementsByClassName('loading')).forEach((e) => {
+    setTimeout(() => e.classList.remove('loading'), Math.random() * 500);
+  });
   // Open menu
   Array.from(document.getElementsByClassName('btn-menu')).forEach((e) => {
     e.addEventListener('click', () => openMenu(e.id.slice(3).toLowerCase()));
@@ -111,4 +112,3 @@ document.addEventListener('DOMContentLoaded', () => {
   // Close menu (via overlay)
   overlay.addEventListener('click', closeMenu);
 });
-

@@ -6,28 +6,29 @@ $txt-dark: darken($txt, 20%)
 
 html
   box-sizing: border-box
-  overflow-x: hidden
+  overflow: hidden
+  background: #000
 
 *, *:before, *:after
   box-sizing: inherit
 
-body, .contact, .technolgies
-  display: flex
-  justify-content: center
-
-body, footer
-  transition: background 3s
-
 body
-  min-height: 90vh
+  min-height: 100vh
   align-items: center
   flex-flow: column wrap
-  background: #000
+  background: $bg
   color: $txt
   font-size: 20px
   user-select: none
-  &.loaded
-    background: $bg
+
+body, footer
+  transition: background 3s
+  &.loading
+    background: #000
+
+body, .contact, .technolgies
+  display: flex
+  justify-content: center
 
 a, button, footer, table, .additional-info, .menu
   color: $txt-dark
@@ -59,14 +60,12 @@ tr:nth-child(even)
 
 footer
   position: fixed
-  background: lighten($bg, 15%)
   z-index: 3
   bottom: 0
   height: 1.2em
   width: 100%
   text-align: center
-  &.loading
-    background: #000
+  background: lighten($bg, 15%)
   a
     margin: 0 5vw
     transition: color 0.2s
