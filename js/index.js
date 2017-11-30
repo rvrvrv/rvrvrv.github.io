@@ -1,3 +1,6 @@
+const closeBtns = Array.from(document.getElementsByClassName('btn-close'));
+const loading = Array.from(document.getElementsByClassName('loading'));
+const menuBtns = Array.from(document.getElementsByClassName('btn-menu'));
 const overlay = document.getElementsByClassName('overlay')[0];
 
 // Toggle blur animation
@@ -75,7 +78,7 @@ function techSwap() {
     }, 300);
     // Increment counter or reset to zero
     i = (i < svgs.length - 1) ? i + 1 : 0;
-  }, 2000);
+  }, 3000);
 }
 
 // Display project menus
@@ -95,20 +98,27 @@ function closeMenu() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Begin tech carousel
-  techSwap();
   // Make elements appear smoothly
-  Array.from(document.getElementsByClassName('loading')).forEach((e) => {
-    setTimeout(() => e.classList.remove('loading'), Math.random() * 500);
+  loading.forEach((e) => {
+    setTimeout(() => e.classList.remove('loading'), (Math.random() * 500) + 700);
+    // Add nudge class to menu buttons after 3s delay
+    if (e.classList.contains('btn-menu')) setTimeout(() => e.classList.add('nudge'), 3000);
   });
+  // Begin tech carousel after 3s delay
+  setTimeout(() => techSwap(), 3000);
+
+  /* Click handlers: */
   // Open menu
-  Array.from(document.getElementsByClassName('btn-menu')).forEach((e) => {
-    e.addEventListener('click', () => openMenu(e.id.slice(3).toLowerCase()));
+  menuBtns.forEach((e) => {
+    e.addEventListener('click', () => {
+      // After any menu button is clicked, remove the nudge animation from all
+      if (e.classList.contains('nudge')) menuBtns.forEach(btn => btn.classList.remove('nudge'));
+      // Call openMenu based on which button is clicked
+      openMenu(e.id.slice(3).toLowerCase());
+    });
   });
   // Close menu (via close button)
-  Array.from(document.getElementsByClassName('btn-close')).forEach((e) => {
-    e.addEventListener('click', closeMenu);
-  });
+  closeBtns.forEach(e => e.addEventListener('click', closeMenu));
   // Close menu (via overlay)
   overlay.addEventListener('click', closeMenu);
 });
