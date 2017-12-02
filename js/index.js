@@ -97,15 +97,17 @@ function closeMenu() {
   overlay.style.top = '-100%';
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+window.onload = () => {
   // Make elements appear smoothly
   loading.forEach((e) => {
-    setTimeout(() => e.classList.remove('loading'), (Math.random() * 500) + 700);
-    // Add nudge class to menu buttons after 3s delay
-    if (e.classList.contains('btn-menu')) setTimeout(() => e.classList.add('nudge'), 3000);
+    // Delay and stagger menu button entrance
+    if (e.classList.contains('btn-menu')) {
+      setTimeout(() => e.classList.remove('loading'), (Math.random() * 500) + 2000);
+      setTimeout(() => e.classList.add('nudge'), 6000); // Add nudge class after additional delay
+    } else e.classList.remove('loading');
   });
-  // Begin tech carousel after 3s delay
-  setTimeout(() => techSwap(), 3000);
+  // Begin tech carousel after 6s delay
+  setTimeout(() => techSwap(), 6000);
 
   /* Click handlers: */
   // Open menu
@@ -121,4 +123,4 @@ document.addEventListener('DOMContentLoaded', () => {
   closeBtns.forEach(e => e.addEventListener('click', closeMenu));
   // Close menu (via overlay)
   overlay.addEventListener('click', closeMenu);
-});
+};

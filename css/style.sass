@@ -14,6 +14,11 @@ html
 *::after
   box-sizing: inherit
 
+.loading *,
+.loading *:before,
+.loading *:after
+  animation-play-state: paused !important
+
 body
   margin: 0
   align-items: center
@@ -26,7 +31,7 @@ body
 
 body,
 footer
-  transition: background 3s
+  transition: background 2s linear
   &.loading
     background: #000
 
@@ -81,7 +86,7 @@ footer
   width: 100%
   z-index: 3
   a
-    animation: swingIn 1s 1s ease-in both
+    animation: swingIn 1s 3s ease-in both
     margin: 0 5vw
     transition: color .2s
 
@@ -106,8 +111,6 @@ footer
     padding: 20px
     width: 4em
     transition: color .2s, transform 1s 2s, filter .8s
-    &.loading
-      filter: blur(100px)
 
 .btn-left
   left: 0
@@ -119,7 +122,7 @@ footer
   &.btn-btm
     border-bottom-right-radius: 1em
     &.nudge
-      animation: nudgeLeftBtn 10s 5.2s ease-out infinite both
+      animation: nudgeLeftBtn 10s 5.1s ease-out infinite both
   &.loading
     transform: translate(-20vw, 10vh)
 
@@ -133,7 +136,7 @@ footer
   &.btn-btm
     border-bottom-left-radius: 1em
     &.nudge
-      animation: nudgeRightBtn 10s 5.6s ease-out infinite both
+      animation: nudgeRightBtn 10s 5.5s ease-out infinite both
   &.loading
     transform: translate(20vw, -10vh)
 
@@ -185,7 +188,7 @@ footer
   br
     display: none
   h1
-    animation: zoomIn 1s linear both
+    animation: zoomIn 1s .5s linear both
     i
       font-size: .5em
       margin: 0 .5em
@@ -193,7 +196,7 @@ footer
 
 .contact
   flex-flow: row wrap
-  animation: swingIn 1s 1.5s ease-in both
+  animation: swingIn 1s 1.8s ease-in both
   a
     font-size: 1.2em
     background: none
@@ -221,7 +224,7 @@ footer
       font-size: .9em
 
 .technologies
-  animation: swingIn 1s .8s both
+  animation: swingIn 2s 1.5s both
   height: 6em
   margin-bottom: .5em
   img
@@ -237,7 +240,7 @@ footer
   animation: focusIn .3s normal forwards
 
 .additional-info
-  animation: focusIn .5s 1.5s both
+  animation: focusIn 1s 2s both
   text-align: center
 
 @keyframes blurOut
@@ -248,13 +251,13 @@ footer
 
   100%
     filter: blur(1.5em)
-    opacity: .5
+    opacity: .2
     transform: scale(.9)
 
 @keyframes focusIn
   0%
     filter: blur(1.5em)
-    opacity: .5
+    opacity: .2
     transform: scale(.9)
 
   100%

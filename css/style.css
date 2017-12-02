@@ -10,6 +10,12 @@ html {
   box-sizing: inherit;
 }
 
+.loading *,
+.loading *:before,
+.loading *:after {
+  animation-play-state: paused !important;
+}
+
 body {
   margin: 0;
   align-items: center;
@@ -23,7 +29,7 @@ body {
 
 body,
 footer {
-  transition: background 3s;
+  transition: background 2s linear;
 }
 
 body.loading,
@@ -93,7 +99,7 @@ footer {
 }
 
 footer a {
-  animation: swingIn 1s 1s ease-in both;
+  animation: swingIn 1s 3s ease-in both;
   margin: 0 5vw;
   transition: color .2s;
 }
@@ -122,10 +128,6 @@ footer a {
   transition: color .2s, transform 1s 2s, filter .8s;
 }
 
-.menu-buttons button.loading {
-  filter: blur(100px);
-}
-
 .btn-left {
   left: 0;
   box-shadow: 1em 0 1em black;
@@ -144,7 +146,7 @@ footer a {
 }
 
 .btn-left.btn-btm.nudge {
-  animation: nudgeLeftBtn 10s 5.2s ease-out infinite both;
+  animation: nudgeLeftBtn 10s 5.1s ease-out infinite both;
 }
 
 .btn-left.loading {
@@ -169,7 +171,7 @@ footer a {
 }
 
 .btn-right.btn-btm.nudge {
-  animation: nudgeRightBtn 10s 5.6s ease-out infinite both;
+  animation: nudgeRightBtn 10s 5.5s ease-out infinite both;
 }
 
 .btn-right.loading {
@@ -238,7 +240,7 @@ footer a {
 }
 
 .main-center h1 {
-  animation: zoomIn 1s linear both;
+  animation: zoomIn 1s .5s linear both;
 }
 
 .main-center h1 i {
@@ -249,7 +251,7 @@ footer a {
 
 .contact {
   flex-flow: row wrap;
-  animation: swingIn 1s 1.5s ease-in both;
+  animation: swingIn 1s 1.8s ease-in both;
 }
 
 .contact a {
@@ -290,7 +292,7 @@ footer a {
 }
 
 .technologies {
-  animation: swingIn 1s .8s both;
+  animation: swingIn 2s 1.5s both;
   height: 6em;
   margin-bottom: .5em;
 }
@@ -311,7 +313,7 @@ footer a {
 }
 
 .additional-info {
-  animation: focusIn .5s 1.5s both;
+  animation: focusIn 1s 2s both;
   text-align: center;
 }
 
@@ -323,7 +325,7 @@ footer a {
   }
   100% {
     filter: blur(1.5em);
-    opacity: .5;
+    opacity: .2;
     transform: scale(0.9);
   }
 }
@@ -331,7 +333,7 @@ footer a {
 @keyframes focusIn {
   0% {
     filter: blur(1.5em);
-    opacity: .5;
+    opacity: .2;
     transform: scale(0.9);
   }
   100% {
