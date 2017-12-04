@@ -1,6 +1,6 @@
-//$bg: #070000 // Red
-$bg: #000300 // Green
-//$bg: #000109 // Blue
+$bg: #070000 // Red
+//$bg: #000100 // Green
+//$bg: #000008 // Blue
 $txt: #fff
 $txt-dark: darken($txt, 20%)
 
@@ -26,12 +26,12 @@ body
   font-size: 20px
   background: $bg
   color: $txt
-  min-height: 98vh
+  min-height: 100vh
   user-select: none
+  transition: background 1s linear
 
 body,
 footer
-  transition: background 2s linear
   &.loading
     background: #000
 
@@ -78,11 +78,12 @@ tr
     background: lighten($bg, 4%)
 
 footer
-  background: lighten($bg, 15%)
+  background: lighten($bg, 10%)
   bottom: 0
   height: 1.2em
-  position: fixed
+  position: absolute
   text-align: center
+  transition: background 4s linear
   width: 100%
   z-index: 3
   a
@@ -107,44 +108,49 @@ footer
 
 .menu-buttons
   button
-    position: fixed
+    position: absolute
     padding: 20px
     width: 4em
     transition: color .2s, transform 1s 2s, filter .8s
+
+.btn-top
+  top: 20vh
+
+.btn-btm
+  bottom: 20vh
 
 .btn-left
   left: 0
   box-shadow: 1em 0 1em darken($bg, 10%)
   &.btn-top
     border-top-right-radius: 1em
+    &.loading
+      transform: translate(-120%, -100%)
     &.nudge
       animation: nudgeLeftBtn 10s 5s ease-out infinite both
   &.btn-btm
     border-bottom-right-radius: 1em
+    &.loading
+      transform: translate(-120%, 100%)
     &.nudge
+      text-shadow: 0 0 5px ligthen($bg, 30%)
       animation: nudgeLeftBtn 10s 5.1s ease-out infinite both
-  &.loading
-    transform: translate(-20vw, 10vh)
 
 .btn-right
   right: 0
   box-shadow: -1em 0 1em darken($bg, 10%)
   &.btn-top
     border-top-left-radius: 1em
+    &.loading
+      transform: translate(120%, -100%)
     &.nudge
-      animation: nudgeRightBtn 10s 5.4s ease-out infinite both
+      animation: nudgeRightBtn 10s 5.3s ease-out infinite both
   &.btn-btm
     border-bottom-left-radius: 1em
+    &.loading
+      transform: translate(120%, 100%)
     &.nudge
-      animation: nudgeRightBtn 10s 5.5s ease-out infinite both
-  &.loading
-    transform: translate(20vw, -10vh)
-
-.btn-top
-  top: 18vh
-
-.btn-btm
-  bottom: 25vh
+      animation: nudgeRightBtn 10s 5.4s ease-out infinite both
 
 .btn-close
   position: absolute
@@ -156,7 +162,7 @@ footer
 .menu
   position: fixed
   background: #000
-  box-shadow: 0 0 20px lighten($bg, 5%), -3vw -3vh 20px #000, 3vw 3vh 20px #000, -3vw 3vh 20px #000, 3vw -3vh 20px #000
+  box-shadow: 50px 0 50px #000, 0 50px 50px #000, 50px 0 50px #000
   padding: .5em
   transition: transform .3s cubic-bezier(.6, .5, 0, 1.05), filter .3s
   z-index: 2
@@ -226,6 +232,7 @@ footer
 .technologies
   animation: swingIn 2s 1.5s both
   height: 6em
+  width: 100%
   margin-bottom: .5em
   img
     margin-top: -1.2em
@@ -250,27 +257,27 @@ footer
     transform: scale(1)
 
   100%
-    filter: blur(1.5em)
+    filter: blur(1.3em)
     opacity: .2
     transform: scale(.9)
 
 @keyframes focusIn
   0%
-    filter: blur(1.5em)
-    opacity: .2
-    transform: scale(.9)
+    filter: blur(1.3em)
+    opacity: 0
 
   100%
     filter: blur(0)
     opacity: 1
-    transform: scale(1)
 
 @keyframes nudgeLeftBtn
   2%
     transform: translateX(50px)
+    box-shadow: 0 0 2em lighten($bg, 30%)
   6%
     transform: translateX(12px)
-
+    box-shadow: none
+    color: $txt
   0%
   4%,
   9%,
@@ -281,8 +288,11 @@ footer
 @keyframes nudgeRightBtn
   2%
     transform: translateX(-50px)
+    box-shadow: 0 0 2em lighten($bg, 30%)
   6%
     transform: translateX(-12px)
+    box-shadow: none
+    color: $txt
 
   0%
   4%,
