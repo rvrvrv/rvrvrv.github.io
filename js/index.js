@@ -16,7 +16,8 @@ function techSwap() {
   const svgs = [
     {
       id: 'nodejs',
-      name: 'NodeJS'
+      name: 'NodeJS',
+      menu: 'full'
     },
     {
       id: 'react',
@@ -25,11 +26,13 @@ function techSwap() {
     },
     {
       id: 'sass',
-      name: 'Sass'
+      name: 'Sass',
+      link: 'https://codepen.io/rvrvrv/pen/VrYQXK'
     },
     {
       id: 'mongodb',
-      name: 'MongoDB'
+      name: 'MongoDB',
+      menu: 'full'
     },
     {
       id: 'd3',
@@ -38,12 +41,13 @@ function techSwap() {
     },
     {
       id: 'socketio',
-      name: 'Socket.IO'
+      name: 'Socket.IO',
+      link: 'https://rv-stocks.herokuapp.com/'
     },
     {
       id: 'highcharts',
       name: 'Highcharts',
-      menu: 'full'
+      link: 'https://rv-stocks.herokuapp.com/'
     },
     {
       id: 'materialize',
@@ -79,11 +83,21 @@ function techSwap() {
     setTimeout(() => {
       const newTech = svgs[i];
       tech.setAttribute('src', `${url}${newTech.id}.svg`);
-      tech.setAttribute('alt', `View ${newTech.name} projects`);
-      if (svgs[i].menu) tech.setAttribute('data-menu', svgs[i].menu);
-      else {
+      tech.setAttribute('alt', newTech.name);
+      tech.style.cursor = 'pointer';
+      if (svgs[i].menu) {
+        // If new tech has a menu prop, replace data-menu and remove data-link
+        tech.setAttribute('data-menu', svgs[i].menu);
+        tech.removeAttribute('data-link');
+      } else if (svgs[i].link) {
+        // If new tech has a link prop, replace data-link and remove data-menu
+        tech.setAttribute('data-link', svgs[i].link);
         tech.removeAttribute('data-menu');
-        tech.setAttribute('data-action', 'Other operation');
+      } else {
+        // If new tech has no menu or link prop, remove previous attributes
+        tech.removeAttribute('data-menu');
+        tech.removeAttribute('data-link');
+        tech.style.cursor = 'default';
       }
       // Unblur new tech
       toggleBlur(tech);
@@ -128,12 +142,12 @@ function closeMenu() {
 
 window.onload = () => {
   // Make elements appear smoothly
-  loading.forEach((e) => {
+  loading.forEach((el) => {
     // Delay and stagger menu button entrance
-    if (e.classList.contains('btn-menu')) {
-      setTimeout(() => e.classList.remove('loading'), (Math.random() * 500) + 1000);
-      setTimeout(() => e.classList.add('nudge'), 5000); // Add nudge class after additional delay
-    } else e.classList.remove('loading');
+    if (el.classList.contains('btn-menu')) {
+      setTimeout(() => el.classList.remove('loading'), (Math.random() * 500) + 1000);
+      setTimeout(() => el.classList.add('nudge'), 5000); // Add nudge class after additional delay
+    } else el.classList.remove('loading');
   });
   // Begin tech carousel and wake up Heroku apps after 6s delay
   setTimeout(() => {
@@ -142,21 +156,31 @@ window.onload = () => {
   }, 6000);
   /* Click handlers: */
   // Open menu
-  menuBtns.forEach((e) => {
-    e.addEventListener('click', () => {
+  menuBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
       // After any menu button is clicked, remove the nudge animation from all
-      if (e.classList.contains('nudge')) menuBtns.forEach(btn => btn.classList.remove('nudge'));
+      if (btn.classList.contains('nudge')) menuBtns.forEach(b => b.classList.remove('nudge'));
       // Call openMenu based on which button is clicked
-      openMenu(e.id.slice(3).toLowerCase());
+      openMenu(btn.id.slice(3).toLowerCase());
     });
   });
   // Close menu (via close button)
-  closeBtns.forEach(e => e.addEventListener('click', closeMenu));
+  closeBtns.forEach(btn => btn.addEventListener('click', closeMenu));
   // Close menu (via overlay)
   overlay.addEventListener('click', closeMenu);
   // Show projects (via technologies icon)
   techImg.addEventListener('click', (e) => {
+    // Open a menu
     if (e.target.dataset.menu) openMenu(e.target.dataset.menu);
-    else console.log('Perform other operation');
+    // Open a specific project
+    else if (e.target.dataset.link) window.open(e.target.dataset.link, '_blank');
+    // Make menu buttons glow
+    else {
+      menuBtns.forEach((btn) => {
+        btn.classList.remove('nudge');
+        btn.classList.add('glow');
+        setTimeout(() => btn.classList.remove('glow'), 3000);
+      });
+    }
   });
 };
