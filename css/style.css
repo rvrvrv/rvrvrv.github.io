@@ -1,7 +1,7 @@
 html {
   box-sizing: border-box;
   background: #000;
-  overflow: hidden;
+  height: 100%;
 }
 
 *,
@@ -10,10 +10,27 @@ html {
   box-sizing: inherit;
 }
 
+html,
+body {
+  overflow: hidden;
+}
+
 .loading *,
 .loading *:before,
 .loading *:after {
   animation-play-state: paused !important;
+}
+
+body,
+.contact,
+.technolgies {
+  display: flex;
+  justify-content: center;
+}
+
+body.loading,
+footer.loading {
+  background: #000;
 }
 
 body {
@@ -23,21 +40,10 @@ body {
   font-size: 20px;
   background: #070000;
   color: #fff;
-  min-height: 100vh;
+  min-height: 100%;
+  position: relative;
   user-select: none;
   transition: background 1s linear;
-}
-
-body.loading,
-footer.loading {
-  background: #000;
-}
-
-body,
-.contact,
-.technolgies {
-  display: flex;
-  justify-content: center;
 }
 
 a,
@@ -205,7 +211,7 @@ footer a {
 .menu {
   position: fixed;
   background: #000;
-  box-shadow: 50px 0 50px #000, 0 50px 50px #000, 50px 0 50px #000;
+  box-shadow: 30px 0 30px #000, 0 30px 30px #000, -30px 0 30px #000, 0 -30px 30px #000;
   padding: .5em;
   transition: transform 0.3s cubic-bezier(0.6, 0.5, 0, 1.05), filter 0.3s;
   z-index: 2;
@@ -220,19 +226,19 @@ footer a {
 }
 
 .menu-react.hidden {
-  transform: translate(-100vw, -50vh);
+  transform: translate(-100vw, -100vh);
 }
 
 .menu-full.hidden {
-  transform: translate(-100vw, 50vh);
+  transform: translate(-100vw, 100vh);
 }
 
 .menu-front.hidden {
-  transform: translate(100vw, -50vh);
+  transform: translate(100vw, -100vh);
 }
 
 .menu-back.hidden {
-  transform: translate(100vw, 50vh);
+  transform: translate(100vw, 100vh);
 }
 
 .main-center {
