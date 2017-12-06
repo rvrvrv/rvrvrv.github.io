@@ -131,6 +131,10 @@ footer a {
   transition: color .2s, transform 1s 2s, filter .8s;
 }
 
+.menu-buttons button.glow {
+  animation: glow 2s normal forwards;
+}
+
 .btn-top {
   top: 20vh;
 }
@@ -305,14 +309,15 @@ footer a {
 
 .technologies {
   animation: swingIn 2s 1.5s both;
+  margin-bottom: .5em;
   height: 6em;
   width: 100%;
-  margin-bottom: .5em;
 }
 
 .technologies img {
-  margin-top: -1.2em;
   border-radius: 5%;
+  cursor: pointer;
+  margin-top: -1.2em;
   max-width: 7.5em;
   max-height: 4em;
 }
@@ -351,6 +356,16 @@ footer a {
   100% {
     filter: blur(0);
     opacity: 1;
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: none;
+  }
+  30% {
+    box-shadow: 0 0 4em #ff3a3a;
   }
 }
 
