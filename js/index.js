@@ -4,10 +4,10 @@ const menuBtns = Array.from(document.getElementsByClassName('btn-menu'));
 const overlay = document.getElementsByClassName('overlay')[0];
 const techImg = document.getElementById('tech');
 
-// Toggle blur animation
-function toggleBlur(el) {
-  el.classList.toggle('focus-in');
-  el.classList.toggle('blur-out');
+// Toggle fade animation
+function toggleFade(el) {
+  el.classList.toggle('fade-in');
+  el.classList.toggle('fade-out');
 }
 
 // Tech carousel
@@ -20,19 +20,14 @@ function techSwap() {
       menu: 'full'
     },
     {
-      id: 'react',
-      name: 'React',
-      menu: 'react'
-    },
-    {
-      id: 'sass',
-      name: 'Sass',
-      link: 'https://codepen.io/rvrvrv/pen/VrYQXK'
-    },
-    {
       id: 'mongodb',
       name: 'MongoDB',
       menu: 'full'
+    },
+    {
+      id: 'react',
+      name: 'React',
+      menu: 'react'
     },
     {
       id: 'd3',
@@ -60,6 +55,11 @@ function techSwap() {
       menu: 'front'
     },
     {
+      id: 'sass',
+      name: 'Sass',
+      link: 'https://codepen.io/rvrvrv/pen/VrYQXK'
+    },
+    {
       id: 'js',
       name: 'JavaScript'
     },
@@ -77,9 +77,9 @@ function techSwap() {
   const tech = document.getElementById('tech');
   let i = 0;
   setInterval(() => {
-    // Blur out current tech
-    toggleBlur(tech);
-    // After delay (for blur animation), replace current tech
+    // Fade out current tech
+    toggleFade(tech);
+    // After delay (for fade animation), replace current tech
     setTimeout(() => {
       const newTech = svgs[i];
       tech.setAttribute('src', `${url}${newTech.id}.svg`);
@@ -99,8 +99,8 @@ function techSwap() {
         tech.removeAttribute('data-link');
         tech.style.cursor = 'default';
       }
-      // Unblur new tech
-      toggleBlur(tech);
+      // Fade in new tech
+      toggleFade(tech);
     }, 300);
     // Increment counter or reset to zero
     i = (i < svgs.length - 1) ? i + 1 : 0;
@@ -141,19 +141,6 @@ function closeMenu() {
 }
 
 window.onload = () => {
-  // Make elements appear smoothly
-  loading.forEach((el) => {
-    // Delay and stagger menu button entrance
-    if (el.classList.contains('btn-menu')) {
-      setTimeout(() => el.classList.remove('loading'), (Math.random() * 500) + 1000);
-      setTimeout(() => el.classList.add('nudge'), 5000); // Add nudge class after additional delay
-    } else el.classList.remove('loading');
-  });
-  // Begin tech carousel and wake up Heroku apps after 6s delay
-  setTimeout(() => {
-    techSwap();
-    wakeUpApps();
-  }, 6000);
   /* Click handlers: */
   // Open menu
   menuBtns.forEach((btn) => {
@@ -183,4 +170,19 @@ window.onload = () => {
       });
     }
   });
+  // Begin tech carousel and wake up Heroku apps after brief delay
+  setTimeout(() => {
+    techSwap();
+    wakeUpApps();
+  }, 3000);
+  // Make elements appear smoothly
+  setTimeout(() => {
+    loading.forEach((el) => {
+    // Delay and stagger menu button entrance
+      if (el.classList.contains('btn-menu')) {
+        setTimeout(() => el.classList.remove('loading'), (Math.random() * 600) + 4000);
+        setTimeout(() => el.classList.add('nudge'), 8000); // Add nudge class after additional delay
+      } else el.classList.remove('loading');
+    });
+  }, 1000);
 };
