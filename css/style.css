@@ -322,11 +322,11 @@ footer a {
 }
 
 .fade-out {
-  animation: fadeOut .3s normal forwards;
+  animation: fadeOut .4s normal forwards;
 }
 
 .fade-in {
-  animation: fadeIn .3s normal forwards;
+  animation: fadeIn .4s normal forwards;
 }
 
 .additional-info {

@@ -174,7 +174,7 @@ window.onload = () => {
   setTimeout(() => {
     techSwap();
     wakeUpApps();
-  }, 3000);
+  }, 5000);
   // Make elements appear smoothly
   setTimeout(() => {
     loading.forEach((el) => {
