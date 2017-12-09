@@ -334,6 +334,76 @@ footer a {
   text-align: center;
 }
 
+/* Tooltips */
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]:before {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  width: 8em;
+  z-index: 4;
+  padding: .2em;
+  border-radius: 3%;
+  background: #000;
+  color: #fff;
+  content: attr(data-tooltip);
+  text-align: center;
+  transition: all 0.5s 0.1s cubic-bezier(0.5, 1, 0.25, 1);
+}
+
+[data-tooltip]:hover:before {
+  visibility: visible;
+  opacity: 1;
+}
+
+[data-tooltip].tip-top:before {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+[data-tooltip].tip-top:hover:before {
+  transform: translateX(-50%) translateY(-15%);
+}
+
+[data-tooltip].tip-btm:before {
+  top: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+[data-tooltip].tip-btm:hover:before {
+  transform: translateX(-50%) translateY(15%);
+}
+
+[data-tooltip].tip-left:before, [data-tooltip].tip-right:before {
+  font-size: .8em;
+}
+
+[data-tooltip].tip-left:before {
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%);
+}
+
+[data-tooltip].tip-left:hover:before {
+  transform: translateX(-15%) translateY(-50%);
+}
+
+[data-tooltip].tip-right:before {
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+}
+
+[data-tooltip].tip-right:hover:before {
+  transform: translateX(15%) translateY(-50%);
+}
+
 @keyframes fadeOut {
   0% {
     opacity: 1;

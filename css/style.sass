@@ -3,6 +3,7 @@ $bg: #070000 // Red
 //$bg: #000008 // Blue
 $txt: #fff
 $txt-dark: darken($txt, 20%)
+$tip-translate: -15%
 
 html
   box-sizing: border-box
@@ -256,6 +257,65 @@ footer
 .additional-info
   animation: fadeIn 1s 3s both
   text-align: center
+
+/* Tooltips */
+[data-tooltip]
+  position: relative
+  &:before
+    position: absolute
+    visibility: hidden
+    opacity: 0
+    pointer-events: none
+    width: 8em
+    z-index: 4
+    padding: .2em
+    border-radius: 3%
+    background: #000
+    color: $txt
+    content: attr(data-tooltip)
+    text-align: center
+    transition: all .5s .1s cubic-bezier(.5, 1, .25, 1)
+  &:hover:before
+    visibility: visible
+    opacity: 1
+
+  &.tip-top
+    &:before
+      bottom: 100%
+      left: 50%
+      transform: translateX(-50%)
+    &:hover:before
+      transform: translateX(-50%) translateY($tip-translate)
+
+  &.tip-btm
+    &:before
+      top: 130%
+      left: 50%
+      transform: translateX(-50%)
+    &:hover:before
+      transform: translateX(-50%) translateY(-$tip-translate)
+
+  &.tip-left,
+  &.tip-right
+    &:before
+      font-size: .8em
+
+  &.tip-left
+    &:before
+      top: 50%
+      right: 100%
+      transform: translateY(-50%)
+    &:hover:before
+      transform: translateX($tip-translate) translateY(-50%)
+
+  &.tip-right
+    &:before
+      top: 50%
+      left: 100%
+      transform: translateY(-50%)
+    &:hover:before
+      transform: translateX(-$tip-translate) translateY(-50%)
+
 
 @keyframes fadeOut
   0%
