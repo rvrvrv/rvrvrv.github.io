@@ -102,7 +102,7 @@ footer {
 }
 
 footer a {
-  animation: swingIn 1s 4.4s ease-in both;
+  animation: swingIn 1s 3.7s ease-in both;
   margin: 0 5vw;
   transition: color .2s;
 }
@@ -266,8 +266,8 @@ footer a {
 }
 
 .contact {
-  flex-flow: row wrap;
-  animation: swingIn 1s 4s ease-in both;
+  flex-flow: row wrap-reverse;
+  animation: swingIn 1s 3.5s ease-in both;
 }
 
 .contact a {
@@ -472,9 +472,6 @@ footer a {
   }
   .contact a {
     padding-bottom: 0;
-  }
-  .contact > :nth-child(1) {
-    order: 2;
   }
 }
  
