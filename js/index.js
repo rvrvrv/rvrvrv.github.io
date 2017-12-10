@@ -180,7 +180,7 @@ window.onload = () => {
     loading.forEach((el) => {
     // Delay and stagger menu button entrance
       if (el.classList.contains('btn-menu')) {
-        setTimeout(() => el.classList.remove('loading'), (Math.random() * 600) + 4000);
+        setTimeout(() => el.classList.remove('loading'), (Math.random() * 600) + 3500);
         setTimeout(() => el.classList.add('nudge'), 8000); // Add nudge class after additional delay
       } else el.classList.remove('loading');
     });
