@@ -20,6 +20,10 @@ function techSwap() {
       menu: 'full'
     },
     {
+      id: 'ts',
+      name: 'TypeScript'
+    },
+    {
       id: 'mongodb',
       name: 'MongoDB',
       menu: 'full'
@@ -33,6 +37,11 @@ function techSwap() {
       id: 'd3',
       name: 'D3.js',
       menu: 'react'
+    },
+    {
+      id: 'handlebars',
+      name: 'Handlebars.js',
+      link: 'https://blog.coder.com'
     },
     {
       id: 'socketio',
