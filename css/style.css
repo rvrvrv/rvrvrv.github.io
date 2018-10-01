@@ -258,10 +258,10 @@ footer a {
   -webkit-box-shadow: 30px 0 30px #000, 0 30px 30px #000, -30px 0 30px #000, 0 -30px 30px #000;
           box-shadow: 30px 0 30px #000, 0 30px 30px #000, -30px 0 30px #000, 0 -30px 30px #000;
   padding: .5em;
-  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.6, 0.5, 0, 1.05), -webkit-filter 0.3s;
-  transition: -webkit-transform 0.3s cubic-bezier(0.6, 0.5, 0, 1.05), -webkit-filter 0.3s;
-  transition: transform 0.3s cubic-bezier(0.6, 0.5, 0, 1.05), filter 0.3s;
-  transition: transform 0.3s cubic-bezier(0.6, 0.5, 0, 1.05), filter 0.3s, -webkit-transform 0.3s cubic-bezier(0.6, 0.5, 0, 1.05), -webkit-filter 0.3s;
+  -webkit-transition: -webkit-transform 1s cubic-bezier(0.6, 0.5, 0, 1.1), -webkit-filter 1s;
+  transition: -webkit-transform 1s cubic-bezier(0.6, 0.5, 0, 1.1), -webkit-filter 1s;
+  transition: transform 1s cubic-bezier(0.6, 0.5, 0, 1.1), filter 1s;
+  transition: transform 1s cubic-bezier(0.6, 0.5, 0, 1.1), filter 1s, -webkit-transform 1s cubic-bezier(0.6, 0.5, 0, 1.1), -webkit-filter 1s;
   z-index: 2;
 }
 
@@ -783,3 +783,4 @@ footer a {
     padding-bottom: 0;
   }
 }
+/*# sourceMappingURL=style.css.map */
