@@ -26,13 +26,20 @@ body {
 
 body,
 .contact,
-.technolgies {
+.technologies {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 body.loading,
@@ -372,7 +379,7 @@ footer a {
 .technologies {
   -webkit-animation: swingIn 2s 1.8s both;
           animation: swingIn 2s 1.8s both;
-  margin-bottom: .5em;
+  margin-bottom: 1em;
   height: 6em;
   width: 100%;
 }
