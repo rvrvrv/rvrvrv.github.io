@@ -183,7 +183,7 @@ footer a {
 }
 
 .btn-left.btn-top {
-  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
 }
 
 .btn-left.btn-top.loading {
@@ -197,7 +197,7 @@ footer a {
 }
 
 .btn-left.btn-btm {
-  border-bottom-right-radius: 1em;
+  border-top-right-radius: 1em;
 }
 
 .btn-left.btn-btm.loading {
@@ -206,7 +206,6 @@ footer a {
 }
 
 .btn-left.btn-btm.nudge {
-  text-shadow: 0 0 5px ligthen(#070000, 30%);
   -webkit-animation: nudgeLeftBtn 10s 3.1s ease-out infinite both;
           animation: nudgeLeftBtn 10s 3.1s ease-out infinite both;
 }
@@ -218,7 +217,7 @@ footer a {
 }
 
 .btn-right.btn-top {
-  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
 }
 
 .btn-right.btn-top.loading {
@@ -232,7 +231,7 @@ footer a {
 }
 
 .btn-right.btn-btm {
-  border-bottom-left-radius: 1em;
+  border-top-left-radius: 1em;
 }
 
 .btn-right.btn-btm.loading {

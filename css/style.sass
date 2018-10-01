@@ -133,30 +133,29 @@ footer
   left: 0
   box-shadow: 1em 0 1em darken($bg, 10%)
   &.btn-top
-    border-top-right-radius: 1em
+    border-bottom-right-radius: 1em
     &.loading
       transform: translate(-120%, -100%)
     &.nudge
       animation: nudgeLeftBtn 10s 3s ease-out infinite both
   &.btn-btm
-    border-bottom-right-radius: 1em
+    border-top-right-radius: 1em
     &.loading
       transform: translate(-120%, 100%)
     &.nudge
-      text-shadow: 0 0 5px ligthen($bg, 30%)
       animation: nudgeLeftBtn 10s 3.1s ease-out infinite both
 
 .btn-right
   right: 0
   box-shadow: -1em 0 1em darken($bg, 10%)
   &.btn-top
-    border-top-left-radius: 1em
+    border-bottom-left-radius: 1em
     &.loading
       transform: translate(120%, -100%)
     &.nudge
       animation: nudgeRightBtn 10s 3.3s ease-out infinite both
   &.btn-btm
-    border-bottom-left-radius: 1em
+    border-top-left-radius: 1em
     &.loading
       transform: translate(120%, 100%)
     &.nudge
