@@ -20,8 +20,16 @@ function techSwap() {
       menu: 'full'
     },
     {
+      id: 'angular',
+      name: 'Angular 2+'
+    },
+    {
       id: 'ts',
       name: 'TypeScript'
+    },
+    {
+      id: 'ngrx',
+      name: 'NgRx'
     },
     {
       id: 'mongodb',
@@ -41,7 +49,6 @@ function techSwap() {
     {
       id: 'handlebars',
       name: 'Handlebars.js',
-      link: 'https://blog.coder.com'
     },
     {
       id: 'socketio',
@@ -57,6 +64,10 @@ function techSwap() {
       id: 'materialize',
       name: 'Materialize',
       menu: 'full'
+    },
+    { 
+      id: 'angularjs',
+      name: 'AngularJS'
     },
     {
       id: 'jquery',
@@ -113,7 +124,7 @@ function techSwap() {
     }, 300);
     // Increment counter or reset to zero
     i = (i < svgs.length - 1) ? i + 1 : 0;
-  }, 5000);
+  }, 4000);
 }
 
 // Wake up Heroku apps
