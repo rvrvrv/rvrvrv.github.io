@@ -53,12 +53,12 @@ function techSwap() {
     {
       id: 'socketio',
       name: 'Socket.IO',
-      link: 'https://rv-stocks.herokuapp.com/'
+      link: 'https://rv-stocks.onrender.com/'
     },
     {
       id: 'highcharts',
       name: 'Highcharts',
-      link: 'https://rv-stocks.herokuapp.com/'
+      link: 'https://rv-stocks.onrender.com/'
     },
     {
       id: 'materialize',
@@ -130,16 +130,16 @@ function techSwap() {
 // Wake up Heroku apps
 function wakeUpApps() {
   // Array of Heroku apps
-  const apps = ['https://rv-interested.herokuapp.com/',
-    'https://rv-bookclub.herokuapp.com/',
-    'https://rv-nightlife.herokuapp.com/',
-    'https://rv-stocks.herokuapp.com/',
-    'https://rv-voting.herokuapp.com/',
-    'https://url-shortener-rv.herokuapp.com/',
-    'https://timestamp-api-rv.herokuapp.com/',
-    'https://img-search-rv.herokuapp.com/',
-    'https://file-size-rv.herokuapp.com/',
-    'https://req-header-parser-rv.herokuapp.com/'];
+  const apps = ['https://pinterest-rv.onrender.com/',
+    'https://bookclub-rv.onrender.com/',
+    'https://nightlife-rv.onrender.com/',
+    'https://stocks-rv.onrender.com/',
+    'https://voting-rv.onrender.com/',
+    'https://url-shortener-rv.onrender.com/',
+    'https://timestamp-api-rv.onrender.com/',
+    'https://img-search-rv.onrender.com/',
+    'https://file-size-rv.onrender.com/',
+    'https://req-header-parser-rv.onrender.com/'];
   // Use Fetch API to wake up each app in background
   apps.forEach(url => fetch(url, { mode: 'no-cors' }));
 }
