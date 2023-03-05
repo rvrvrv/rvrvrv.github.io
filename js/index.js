@@ -127,9 +127,9 @@ function techSwap() {
   }, 4000);
 }
 
-// Wake up Heroku apps
+// Wake up hosted apps
 function wakeUpApps() {
-  // Array of Heroku apps
+  // Array of hosted app URLs
   const apps = ['https://pinterest-rv.onrender.com/',
     'https://bookclub-rv.onrender.com/',
     'https://nightlife-rv.onrender.com/',
